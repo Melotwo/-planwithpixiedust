@@ -1,0 +1,9 @@
+{
+  "name": "pixiedust-api-proxy",
+  "version": "1.0.0",
+  "description": "Secure proxy for Plan With Pixie Dust to hide the Gemini API key.",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
