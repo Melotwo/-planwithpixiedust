@@ -1,0 +1,13 @@
+[build]
+  # The directory where your static files (like index.html) live
+  publish = "."
+
+[functions]
+  # Directory where your Netlify Functions code lives
+  directory = "netlify/functions"
+  
+# Environment variables for all Netlify Functions
+[build.environment]
+  # This variable must be set in the Netlify UI for security 
+  GEMINI_API_KEY = "dummy-key-for-config-only"
+    
