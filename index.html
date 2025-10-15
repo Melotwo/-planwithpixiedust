@@ -1,1 +1,465 @@
-https://gemini.google.com/app/a6ca097119f212a5?canvas-id=c_a6ca097119f212a5_index.html&full-screen=true
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan With Pixie Dust - Magical Travel Planning & Tours</title>
+    
+    <!-- SEO Keywords -->
+    <meta name="description" content="Plan With Pixie Dust offers unique travel tours, insider tips, and hacks inspired by a former Disney Cruise Line crew member. Discover budget-friendly, authentic adventures for millennial women.">
+    <meta name="keywords" content="Disney cruise tips, plan with pixie dust, travel tours, travel hacks, millennial travel, authentic travel, sustainable travel, Paris tours, Amsterdam travel, travel planning">
+
+    <!-- Fonts and Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a1d7a871f.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Global CSS reset and fonts */
+        body {
+            font-family: 'Playfair Display', serif;
+            color: #222;
+            margin: 0;
+            padding: 0;
+            /* FIX for the horizontal scroll/moving line */
+            overflow-x: hidden; 
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Custom Colors */
+        .text-navy { color: #1C2526; }
+        .text-gold { color: #D4A817; }
+        .bg-navy { background-color: #1C2526; }
+        .bg-red { background-color: #B81E26; }
+        .bg-soft-blue { background-image: linear-gradient(to bottom, #A3BFFA, #FFFFFF); }
+
+        /* General Styling */
+        .cta-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Loading Spinner */
+        .loading-animation {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #D4A817;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Background image animation for the hero section */
+        .hero-bg {
+            /* Your uploaded castle image URL */
+            background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Magical+Castle+Placeholder'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes the background stay in place when scrolling */
+        }
+        
+        /* Fallback for the image if the URL above is not accessible */
+        .hero-bg {
+            background-image: url('https://i.ibb.co/60Vv1qS/castle-image.jpg'); 
+        }
+
+        /* Pixie Dust Animation for the Titles */
+        .sparkle {
+            display: inline-block;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Styling for the main content card */
+        .content-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 2.5rem 1.5rem;
+            max-width: 90%;
+            width: 100%;
+        }
+
+        /* Mobile Adjustments */
+        @media (min-width: 768px) {
+            .content-card {
+                padding: 3rem;
+                max-width: 700px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-navy antialiased">
+
+    <!-- Hero Section with Castle Background -->
+    <header class="relative w-full min-h-screen flex items-center justify-center overflow-hidden hero-bg">
+        <!-- Background Image Overlay -->
+        <div class="absolute inset-0 hero-bg bg-black opacity-40"></div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center p-6 text-white max-w-4xl mx-auto">
+            <p class="text-xl italic mb-4 font-normal tracking-wider">Plan With Pixie Dust</p>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight">
+                Your Dream Tour, Magically Curated.
+            </h1>
+            <p class="text-xl md:text-2xl font-normal mb-8">
+                Insider tips and budget-friendly adventures from a former Disney Cruise Line crew member.
+            </p>
+            <a href="#planner" class="cta-button inline-block bg-red text-white py-3 px-8 rounded-full text-lg font-bold uppercase tracking-wider shadow-lg hover:bg-red-700">
+                Start Planning Magic
+            </a>
+        </div>
+    </header>
+
+    <main id="planner" class="flex flex-col items-center py-16 md:py-24 bg-soft-blue">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-navy mb-12 text-center max-w-3xl px-4">
+            Conquer Your Trip Planning Quest
+        </h2>
+
+        <!-- ITINERARY BUILDER -->
+        <section class="content-card bg-white mb-12">
+            <h3 class="text-3xl text-gold font-bold text-center mb-6">
+                Magical Itinerary Builder <span class="sparkle">✨</span>
+            </h3>
+            <p class="text-center mb-8">
+                Tell us about your dream trip, and we'll conjure a personalized itinerary just for you.
+            </p>
+
+            <div class="space-y-4">
+                <input id="destination" type="text" placeholder="Destination (e.g., South Africa)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gold focus:border-gold" value="South Africa">
+                <input id="interests" type="text" placeholder="Interests (e.g., history, wildlife, food)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gold focus:border-gold" value="apartheid">
+                <input id="duration" type="text" placeholder="Duration (e.g., 7 days, 2 weeks)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gold focus:border-gold" value="7 days">
+            </div>
+
+            <button id="itinerary-button" onclick="generateItinerary()" class="cta-button w-full mt-6 bg-navy text-white py-3 rounded-full text-lg font-bold shadow-md hover:bg-gray-800 flex justify-center items-center">
+                Craft My Magical Itinerary! <span class="sparkle">✨</span>
+            </button>
+            
+            <div id="itinerary-loading" class="hidden flex justify-center mt-6">
+                <div class="loading-animation"></div>
+            </div>
+
+            <div id="itinerary-output" class="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg min-h-[150px] overflow-auto">
+                Your dream itinerary will appear here after a little sprinkle of pixie dust!
+            </div>
+        </section>
+
+        <!-- CAPTION GENERATOR -->
+        <section class="content-card bg-white mb-12">
+            <h3 class="text-3xl text-gold font-bold text-center mb-6">
+                Sparkle Caption Generator <span class="sparkle">✨</span>
+            </h3>
+            <p class="text-center mb-8">
+                Describe your photo, and we'll create a perfectly magical caption for your next post.
+            </p>
+
+            <input id="caption-description" type="text" placeholder="e.g., Beach in Miami" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gold focus:border-gold" value="Beach in Miami">
+
+            <button id="caption-button" onclick="generateCaption()" class="cta-button w-full mt-6 bg-navy text-white py-3 rounded-full text-lg font-bold shadow-md hover:bg-gray-800 flex justify-center items-center">
+                Generate My Caption! <span class="sparkle">✨</span>
+            </button>
+            
+            <div id="caption-loading" class="hidden flex justify-center mt-6">
+                <div class="loading-animation"></div>
+            </div>
+
+            <div id="caption-output" class="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg flex flex-col justify-between items-start gap-4">
+                <p id="caption-text" class="italic w-full">Your perfect Instagram caption will shine here!</p>
+                <div id="caption-actions" class="hidden w-full flex justify-end">
+                    <button id="copy-caption-button" onclick="copyCaption()" class="cta-button bg-gold text-white text-sm py-2 px-4 rounded-full font-bold shadow-md hover:bg-yellow-600">
+                        Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAGICAL BUDGET ESTIMATOR -->
+        <section class="content-card bg-white">
+            <h3 class="text-3xl text-gold font-bold text-center mb-6">
+                Magical Budget Estimator <span class="sparkle">💰</span>
+            </h3>
+            <p class="text-center mb-8">
+                Input your desired travel style and let us conjure a preliminary cost estimate!
+            </p>
+
+            <div class="space-y-4">
+                <input id="budget-destination" type="text" placeholder="Destination (e.g., Japan, Europe)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gold focus:border-gold" value="Japan">
+                <select id="budget-style" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gold focus:border-gold">
+                    <option value="">Select Travel Style</option>
+                    <option value="Backpacking (Budget)">Backpacking (Budget)</option>
+                    <option value="Comfortable (Mid-Range)">Comfortable (Mid-Range)</option>
+                    <option value="Luxury (High-End)">Luxury (High-End)</option>
+                </select>
+                <input id="budget-duration" type="number" placeholder="Duration in Days" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gold focus:border-gold" value="10">
+            </div>
+
+            <button id="budget-button" onclick="generateBudget()" class="cta-button w-full mt-6 bg-navy text-white py-3 rounded-full text-lg font-bold shadow-md hover:bg-gray-800 flex justify-center items-center">
+                Estimate My Magical Budget! <span class="sparkle">💰</span>
+            </button>
+            
+            <div id="budget-loading" class="hidden flex justify-center mt-6">
+                <div class="loading-animation"></div>
+            </div>
+
+            <div id="budget-output" class="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg min-h-[150px] overflow-auto">
+                Your estimated budget will appear here, ready for your next adventure!
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white text-center py-16">
+        <h3 class="text-4xl font-bold mb-4">Join the Community!</h3>
+        <p class="text-lg mb-8">Get insider hacks and exclusive travel tips delivered right to your inbox.</p>
+        
+        <form class="max-w-md mx-auto flex flex-col md:flex-row gap-4 p-4">
+            <input type="email" placeholder="turoka15@gmail.com" class="flex-grow p-3 rounded-full border border-gray-700 text-navy" value="turoka15@gmail.com">
+            <button type="submit" class="cta-button bg-red text-white py-3 px-8 rounded-full text-lg font-bold uppercase tracking-wider hover:bg-red-700 shadow-md">
+                Subscribe
+            </button>
+        </form>
+
+        <div class="mt-12 text-sm text-gray-400">
+            <p>&copy; 2025 Plan With Pixie Dust</p>
+            <p>contact: planwithpixiedust@email.com</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- API Keys and Constants ---
+        // Netlify functions are located at /.netlify/functions/ followed by the folder name
+        const ITINERARY_ENDPOINT = '/.netlify/functions/itinerary-proxy/itinerary-proxy.js';
+        const CAPTION_ENDPOINT = '/.netlify/functions/caption-proxy/caption-proxy.js';
+        const BUDGET_ENDPOINT = '/.netlify/functions/budget-proxy/budget-proxy.js';
+
+        // --- Utility Functions ---
+
+        // Implements exponential backoff for retrying API calls
+        async function fetchWithRetry(url, options, retries = 3) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) {
+                        return response;
+                    } else if (response.status === 429) {
+                        // Too Many Requests - wait and retry
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        console.warn(`Rate limit hit. Retrying in ${delay / 1000}s...`);
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        continue;
+                    } else {
+                        // Other non-retryable errors
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                } catch (error) {
+                    if (i < retries - 1) {
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        console.error(`Fetch failed on attempt ${i + 1}: ${error.message}. Retrying in ${delay / 1000}s...`);
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    } else {
+                        throw error;
+                    }
+                }
+            }
+        }
+
+
+        // --- ITINERARY FUNCTION ---
+        async function generateItinerary() {
+            const destination = document.getElementById('destination').value.trim();
+            const interests = document.getElementById('interests').value.trim();
+            const duration = document.getElementById('duration').value.trim();
+
+            const outputDiv = document.getElementById('itinerary-output');
+            const buttonText = document.getElementById('itinerary-button');
+            const loadingIndicator = document.getElementById('itinerary-loading');
+
+            if (!destination || !interests || !duration) {
+                outputDiv.innerHTML = '<span class="text-red-500 font-bold">Oh no!</span> Please fill out all fields (Destination, Interests, Duration) to craft your magical itinerary.';
+                return;
+            }
+
+            // Show loading state
+            buttonText.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            outputDiv.innerHTML = '<p class="text-center italic text-gold">Sprinkling pixie dust... crafting your Itinerary now!</p>';
+
+            try {
+                const payload = { destination, interests, duration };
+                
+                const response = await fetchWithRetry(ITINERARY_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    outputDiv.innerHTML = data.itinerary.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+                } else {
+                    outputDiv.innerHTML = `<span class="text-red-500 font-bold">Oops!</span> ${data.error || 'An unexpected error occurred. Please check Netlify functions.'}`;
+                }
+
+            } catch (error) {
+                console.error('Itinerary generation error:', error);
+                outputDiv.innerHTML = '<span class="text-red-500 font-bold">Pixie Dust Malfunction!</span> An error occurred while contacting the magical planner. Check the console for details.';
+            } finally {
+                // Hide loading state
+                buttonText.classList.remove('hidden');
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+
+
+        // --- CAPTION FUNCTION ---
+        async function generateCaption() {
+            const photoDescription = document.getElementById('caption-description').value.trim();
+            const outputText = document.getElementById('caption-text');
+            const buttonText = document.getElementById('caption-button');
+            const loadingIndicator = document.getElementById('caption-loading');
+            const actionsDiv = document.getElementById('caption-actions');
+
+            if (!photoDescription) {
+                outputText.innerHTML = '<span class="text-red-500 font-bold">Hold up!</span> Please describe your photo first.';
+                actionsDiv.classList.add('hidden');
+                return;
+            }
+
+            // Show loading state
+            buttonText.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            outputText.innerHTML = '<span class="italic text-gold">Polishing the sparkle... generating your caption!</span>';
+            actionsDiv.classList.add('hidden');
+
+            try {
+                const payload = { photoDescription };
+
+                const response = await fetchWithRetry(CAPTION_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    outputText.innerHTML = data.caption.trim();
+                    actionsDiv.classList.remove('hidden');
+                } else {
+                    outputText.innerHTML = `<span class="text-red-500 font-bold">Uh Oh!</span> ${data.error || 'An error occurred while generating your caption. Please ensure your Netlify Functions are deployed and environment variables are set.'}`;
+                    actionsDiv.classList.add('hidden');
+                }
+
+            } catch (error) {
+                console.error('Caption generation error:', error);
+                outputText.innerHTML = '<span class="text-red-500 font-bold">Pixie Dust Malfunction!</span> An error occurred while contacting the generator. Check the console for details.';
+                actionsDiv.classList.add('hidden');
+            } finally {
+                // Hide loading state
+                buttonText.classList.remove('hidden');
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+
+        function copyCaption() {
+            const textToCopy = document.getElementById('caption-text').innerText;
+            const tempInput = document.createElement('input');
+            document.body.appendChild(tempInput);
+            tempInput.value = textToCopy;
+            tempInput.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                const button = document.getElementById('copy-caption-button');
+                
+                if (successful) {
+                    button.innerText = 'Copied!';
+                } else {
+                    button.innerText = 'Copy Failed!';
+                }
+                
+                setTimeout(() => {
+                    button.innerText = 'Copy to Clipboard';
+                }, 2000);
+
+            } catch (err) {
+                console.error('Copy Failed:', err);
+                // Fallback UI error message (not alert)
+                document.getElementById('copy-caption-button').innerText = 'Copy Failed!';
+            } finally {
+                document.body.removeChild(tempInput);
+            }
+        }
+
+        // --- BUDGET FUNCTION ---
+        async function generateBudget() {
+            const destination = document.getElementById('budget-destination').value.trim();
+            const style = document.getElementById('budget-style').value.trim();
+            const duration = document.getElementById('budget-duration').value.trim();
+
+            const outputDiv = document.getElementById('budget-output');
+            const buttonText = document.getElementById('budget-button');
+            const loadingIndicator = document.getElementById('budget-loading');
+
+            if (!destination || !style || !duration) {
+                outputDiv.innerHTML = '<span class="text-red-500 font-bold">Almost there!</span> Please fill out all fields (Destination, Style, Duration) to estimate your magical budget.';
+                return;
+            }
+            
+            // Show loading state
+            buttonText.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            outputDiv.innerHTML = '<p class="text-center italic text-gold">Calculating the coins... estimating your budget now!</p>';
+
+            try {
+                const payload = { destination, style, duration };
+                
+                const response = await fetchWithRetry(BUDGET_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    outputDiv.innerHTML = data.budget.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+                } else {
+                    outputDiv.innerHTML = `<span class="text-red-500 font-bold">Oops!</span> ${data.error || 'An unexpected error occurred. Please check Netlify functions.'}`;
+                }
+
+            } catch (error) {
+                console.error('Budget generation error:', error);
+                outputDiv.innerHTML = '<span class="text-red-500 font-bold">Pixie Dust Malfunction!</span> An error occurred while contacting the estimator. Check the console for details.';
+            } finally {
+                // Hide loading state
+                buttonText.classList.remove('hidden');
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
